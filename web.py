@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 
 app = Flask(__name__)
 
@@ -6,6 +6,11 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     return "Dark\n"
+
+
+@app.route('/run', methods=['POST'])
+def run():
+    return request.get_data()
 
 
 if __name__ == '__main__':
