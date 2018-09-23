@@ -1,4 +1,5 @@
 from flask import Flask, request
+from interpreter import interpret
 
 app = Flask(__name__)
 
@@ -10,7 +11,8 @@ def hello():
 
 @app.route('/run', methods=['POST'])
 def run():
-    return request.get_data()
+    program = request.get_data()
+    return interpret(program)
 
 
 if __name__ == '__main__':
