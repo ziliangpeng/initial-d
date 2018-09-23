@@ -11,7 +11,7 @@ def hello():
 
 @app.route('/run', methods=['POST'])
 def run():
-    program = request.get_data()
+    program = request.get_data().decode('utf-8')
     return interpret(program)
 
 
