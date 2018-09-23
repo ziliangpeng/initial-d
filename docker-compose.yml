@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  dark:
+    build:
+      context: .
+    container_name: dark
+    ports:
+      - "922:922"
